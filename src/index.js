@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import path from "path";
-
+import "./database"
 const app = express();
 app.set("port", process.env.PORT || 4000);
 
@@ -19,9 +19,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // cargar un archivo estatico
 app.use(express.static(path.join(__dirname, "../public")));
-console.log(path.join(__dirname, "../public"));
+
 
 // rutas :nombre de dominio +-----
-app.get("/prueba", (req, res) => {
-  res.send("Esto es una prueba de la peticion GET");
+app.get("/tareas", (req, res) => {
+  res.send("Aqui tengo que retornar una lista de tareas");
+});
+app.post("/tareas", (req, res) => {
+  res.send("retornar un objeto");
+});
+app.get("/tareas2", (req, res) => {
+  res.send("Aqui devolvemos una tarea");
 });
