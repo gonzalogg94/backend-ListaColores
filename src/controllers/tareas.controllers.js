@@ -33,3 +33,19 @@ export const crearTarea = async (req, res) => {
     });
   }
 };
+
+
+
+
+export const  obtenerTarea= async (req,res)=>{
+try{
+console.log(req.params.id)
+const tareaBuscada= await Tarea.findById(req.params.id)
+res.status(200).json(tareaBuscada);
+}catch(error){
+console.log(error)
+res.status(404).json({
+  mensaje:"Error no se pudo encontrar el producto solicitado"
+})
+}
+}
