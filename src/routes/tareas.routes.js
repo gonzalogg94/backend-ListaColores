@@ -7,6 +7,9 @@ router.route("/tareas")
 .get(listarTareas)
 .post(crearTarea)
 
+router.route('/tareas/:id')
+
+
 
 
 
