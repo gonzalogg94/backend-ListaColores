@@ -1,21 +1,23 @@
 import { Router } from "express";
-import { crearTarea, editarTarea, listarTareas, obtenerTarea } from "../controllers/tareas.controllers";
+import {
+  borrarTarea,
+  crearTarea,
+  editarTarea,
+  listarTareas,
+  obtenerTarea,
+} from "../controllers/tareas.controllers";
 
 const router = Router();
 
-router.route("/tareas")
-.get(listarTareas)
-.post(crearTarea)
+router.route("/tareas").get(listarTareas).post(crearTarea);
 
-router.route('/tareas/:id')
-.get(obtenerTarea)
-.put(editarTarea)
+router
+  .route("/tareas/:id")
+  .get(obtenerTarea)
+  .put(editarTarea)
+  .delete(borrarTarea);
 
-
-
-
-
- export default router         
+export default router;
 
 // app.get("/tareas", (req, res) => {
 //     res.send("Aqui tengo que retornar una lista de tareas");

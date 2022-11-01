@@ -60,3 +60,16 @@ export const editarTarea = async (req, res) => {
     });
   }
 };
+export const borrarTarea = async (req, res) => {
+  try {
+  await Tarea.findByIdAndDelete(req.params.id)
+  res.status(200).json({
+    mensaje:"El producto fue correctamente eliminado"
+  })
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error el producto solicitado no puedo ser eliminado",
+    });
+  }
+};
