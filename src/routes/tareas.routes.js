@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { crearTarea, listarTareas, obtenerTarea } from "../controllers/tareas.controllers";
+import { crearTarea, editarTarea, listarTareas, obtenerTarea } from "../controllers/tareas.controllers";
 
 const router = Router();
 
@@ -9,6 +9,7 @@ router.route("/tareas")
 
 router.route('/tareas/:id')
 .get(obtenerTarea)
+.put(editarTarea)
 
 
 
