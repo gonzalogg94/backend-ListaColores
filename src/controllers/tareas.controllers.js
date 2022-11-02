@@ -1,3 +1,4 @@
+import { validationResult } from "express-validator";
 import Tarea from "../models/tarea";
 export const listarTareas = async (req, res) => {
   try {
@@ -14,7 +15,15 @@ export const listarTareas = async (req, res) => {
 };
 
 export const crearTarea = async (req, res) => {
+
+const errores =validationResult(req);
+if(!errores.isEmpty()){
+return res.status(400).json({
+  errores: errores.array()
+})
+}
   // extraer del body los datos
+
   console.log(req.body);
   // agregar la validacion correspondiente
   try {
