@@ -27,4 +27,4 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 
 // rutas :nombre de dominio +-----
-app.use("/apitareas",tareasRouter)
+app.use("/apicolores",tareasRouter)

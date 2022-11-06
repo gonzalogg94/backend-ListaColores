@@ -11,11 +11,11 @@ import { check } from "express-validator";
 const router = Router();
 
 router
-  .route("/tareas")
+  .route("/colores")
   .get(listarTareas)
   .post(
     [
-      check("tarea")
+      check("color")
         .notEmpty()
         .withMessage("El nombre de la tarea es un dato obligatorio")
         .isLength({
@@ -30,7 +30,7 @@ router
   );
 
 router
-  .route("/tareas/:id")
+  .route("/colores/:id")
   .get(obtenerTarea)
   .put(
     [

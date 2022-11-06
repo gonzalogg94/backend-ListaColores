@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
-const tareaSchema = new Schema({
-  tarea: {
+const colorSchema = new Schema({
+  color: {
     type: String,
     required: true,
     unique: true,
@@ -12,5 +12,5 @@ const tareaSchema = new Schema({
 
 // aqui realizamos el modelo
 
-const Tarea = mongoose.model("tarea", tareaSchema);
-export default Tarea;
+const color = mongoose.model("color", colorSchema);
+export default color;
